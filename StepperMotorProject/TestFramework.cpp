@@ -13,14 +13,14 @@ void TestFramework_TestSwitchFunctionality()
   if(readVal == HIGH)
   {
 //    Serial.println("Move Carriage Right");
-    MotorControl_MoveCarriageRight(SPEED_HALF,10);
+    MotorControl_MoveCarriageEast(SPEED_HALF,10);
   }
 
   readVal = digitalRead(switchTwo);
 
   if(readVal == HIGH)
   {
-    MotorControl_MoveCarriageLeft(SPEED_HALF,10);
+    MotorControl_MoveCarriageWest(SPEED_HALF,10);
   }
   
   delay(1);
@@ -34,28 +34,52 @@ void TestFramework_TestMovement()
   {
     incomingByte = Serial.read();
   
-    if( incomingByte == 'w')
+    if( incomingByte == '8')
     {
-      Serial.println("Up");
-      MotorControl_MoveCarriageUp(SPEED_HALF, 100);
+      Serial.println("North");
+      MotorControl_MoveCarriageNorth(SPEED_HALF, 100);
     }
-    else if(incomingByte == 's')
+    else if(incomingByte == '2')
     {
-      Serial.println("Down");
-      MotorControl_MoveCarriageDown(SPEED_HALF, 100);
+      Serial.println("South");
+      MotorControl_MoveCarriageSouth(SPEED_HALF, 100);
     }
-    else if(incomingByte == 'a')
+    else if(incomingByte == '4')
     {
-      Serial.println("Right");
-      MotorControl_MoveCarriageLeft(SPEED_HALF, 100);
+      Serial.println("East");
+      MotorControl_MoveCarriageWest(SPEED_HALF, 100);
 
     }
-    else if(incomingByte == 'd')
+    else if(incomingByte == '6')
     {
-      Serial.println("Left");
-      MotorControl_MoveCarriageRight(SPEED_HALF, 100);
+      Serial.println("West");
+      MotorControl_MoveCarriageEast(SPEED_HALF, 100);
     }
-    else if(incomingByte == 'h')
+    else if(incomingByte == '7')
+    {
+      Serial.println("NorthWest");
+      MotorControl_MoveCarriageNorthWest(SPEED_FULL, 100);
+    }
+    else if(incomingByte == '9')
+    {
+      Serial.println("NorthEast");
+      MotorControl_MoveCarriageNorthEast(SPEED_FULL, 100);
+    }
+    else if(incomingByte == '1')
+    {
+      Serial.println("SouthWest");
+      MotorControl_MoveCarriageSouthWest(SPEED_FULL, 100);
+    }
+    else if(incomingByte == '3')
+    {
+      Serial.println("SouthEast");
+      MotorControl_MoveCarriageSouthEast(SPEED_FULL, 100);
+    }
+
+
+
+    
+    else if(incomingByte == '5')
     {
      MotorControl_AutoHome(); 
     }

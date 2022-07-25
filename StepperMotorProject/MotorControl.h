@@ -6,10 +6,15 @@
 void MotorControl_AutoHome();
 
 
-void MotorControl_MoveCarriageUp(uint8_t speedVal, int steps);
-void MotorControl_MoveCarriageDown(uint8_t speedVal, int steps);
-void MotorControl_MoveCarriageLeft(uint8_t speedVal, int steps);
-void MotorControl_MoveCarriageRight(uint8_t speedVal, int steps);
+void MotorControl_MoveCarriageNorth(uint8_t speedVal, int steps);
+void MotorControl_MoveCarriageSouth(uint8_t speedVal, int steps);
+void MotorControl_MoveCarriageWest(uint8_t speedVal, int steps);
+void MotorControl_MoveCarriageEast(uint8_t speedVal, int steps);
+
+void MotorControl_MoveCarriageNorthEast(uint8_t speedVal, int steps);
+void MotorControl_MoveCarriageSouthEast(uint8_t speedVal, int steps);
+void MotorControl_MoveCarriageNorthWest(uint8_t speedVal, int steps);
+void MotorControl_MoveCarriageSouthWest(uint8_t speedVal, int steps);
 
 
 #endif //MOTORCONTROL_H
